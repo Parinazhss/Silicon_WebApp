@@ -1,0 +1,51 @@
+﻿@model SignInViewModel
+@{
+    ViewData["Title"] = "Sign In";
+}
+<section id="signin">
+    <div class="container">
+        
+        @if (!string.IsNullOrEmpty(ViewData["StatusMessage"]?.ToString()))
+        {
+            <div class="alert alert-danger">
+                @ViewData["StatusMessage"]
+            </div>
+        }
+
+       
+        
+        <form method="post" asp-controller="Auth" asp-action="SignIn" novalidate>
+            <h1>Welcome Back</h1>
+            <p>Don't have an account yet?' <a asp-asp-controller="Auth" asp-action="SignUp">Sign up here</a>.</p>
+
+            <div class="form-content">
+
+
+                <div id="form-email" class="input-group">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email">
+                </div>
+
+                <div id="form-password" class="input-group">
+                    <label asp-for="Password"></label>
+                    <input asp-for="Password">
+                </div>
+
+
+
+                <div id="form-checkbox" class="checkbox-group">
+                    <div class="input-group">
+                    <input asp-for="IsPresistent" type="checkbox">
+                    <label asp-for="IsPresistent"> </label>
+                    </div>
+                </div>
+
+                <div class="form-button">
+                <button class="btn-theme-s" type="submit"><i class="fa-regular fa-arrow-left-tobracket"></i>Sign in</button>
+                </div>
+                <a id="form-forgot-password" asp-controller="Accout" asp-action="Forgot">Forgot your password?</a>
+            </div>
+
+        </form>
+    </div>
+</section>

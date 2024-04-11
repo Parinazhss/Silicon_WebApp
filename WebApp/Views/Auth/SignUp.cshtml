@@ -1,0 +1,71 @@
+﻿@model SignUpViewModel
+@{
+    ViewData["Title"] = "Sign Up";
+}
+<section id="signup">
+    <div class="container">
+
+        @if (!string.IsNullOrEmpty(ViewData["StatusMessage"]?.ToString()))
+        {
+            <div class="alert alert-danger">
+                @ViewData["StatusMessage"]
+            </div>
+        }
+
+
+
+        <form method="post" asp-controller="Auth" asp-action="SignUp" novalidate>
+            <h1>Creat Account</h1>
+            <p>Alreadynhave an account? <a asp-asp-controller="Auth" asp-action="SignIn">Sign in here</a>.</p>
+
+            <div class="form-content">
+
+
+                <div id="form-firstname" class="input-group">
+                    <label asp-for="FirstName"></label>
+                    <span asp-validation-for="FirstName"></span>
+                    <input asp-for="FirstName">
+                </div>
+
+                <div id="form-lastname" class="input-group">
+                    <label asp-for="LastName"></label>
+                    <span asp-validation-for="LastName"></span>
+                    <input asp-for="LastName">
+                </div>
+
+                <div id="form-email" class="input-group">
+                    <label asp-for="Email"></label>
+                    <span asp-validation-for="Email"></span>
+                    <input asp-for="Email" />
+                </div>
+
+                <div id="form-password" class="input-group">
+                    <label asp-for="Password"></label>
+                    <span asp-validation-for="Password"></span>
+                    <input asp-for="Password" />
+                </div>
+
+                <div id="form-confirm" class="input-group">
+                    <label asp-for="ComfirmPassword"></label>
+                    <span asp-validation-for="ComfirmPassword"></span>
+                    <input asp-for="ComfirmPassword" />
+                </div>
+
+
+                <div id="form-checkbox" class="checkbox-group">
+                    <div class="input-group">
+                        <input asp-for="TermsAndConditions" type="checkbox">
+                        <label asp-for="TermsAndConditions"> </label>
+                    </div>
+                    <span asp-validation-for="TermsAndConditions"></span>
+                </div>
+
+                <div class="form-button">
+                    <button class="btn-theme-s" type="submit"><i class="fa-regular fa-arrow-left-tobracket"></i>Sign up</button>
+                </div>
+      
+            </div>
+
+        </form>
+    </div>
+</section>
