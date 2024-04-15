@@ -1,10 +1,12 @@
-﻿document.addEventListener('DOMContentLoaded', function () {
+﻿'use strict';
+
+document.addEventListener('DOMContentLoaded', function () {
     handleProfileImageUpload();
 });
 
 function handleProfileImageUpload() {
     try {
-        let fileUploader = document.querySelector('#fileUploader');
+        var fileUploader = document.querySelector('#fileUploader');
         if (fileUploader != undefined) {
             console.log("File uploader found.");
             fileUploader.addEventListener('change', function () {
@@ -15,9 +17,10 @@ function handleProfileImageUpload() {
                 }
             });
         } else {
-            console.log("File uploader not found.");
-        }
+                console.log("File uploader not found.");
+            }
     } catch (error) {
         console.error("Error in handleProfileImageUpload:", error);
     }
 }
+
