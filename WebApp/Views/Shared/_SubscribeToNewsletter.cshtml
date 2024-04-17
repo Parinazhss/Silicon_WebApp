@@ -1,6 +1,6 @@
 ﻿@model SubscribeViewModel
 
-<section id="subscribe" class="subscribe">
+<section id="subscribe" >
     <div class="container">
         <div class="title">
             <h2>Don't Want to Miss Anything?</h2>
@@ -56,25 +56,28 @@
                     </div>
 
                 </div>
-
-            </div>
-
-            <div class="form-email">
-                <div class="input-group">
-                    <i class="fa-regular fa-envelope"></i>
-                    <input asp-for="Email" />
+                <div class="form-email">
+                    <div class="input-group">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input asp-for="Email" />
+                    </div>
+                    <button type="submit" class="btn btn-theme">Subscribe*</button>
+                    @if (!string.IsNullOrEmpty(TempData["StatusMessage"]?.ToString()))
+                    {
+                        <span class="status-message">@TempData["StatusMessage"]</span>
+                    }
+                    else
+                    {
+                        <span class="status-message">  * Yes, I agree to the privacy policy. </span>
+                    }
                 </div>
-                <button type="submit" class="btn-theme">Subscribe*</button>
+
+                
             </div>
 
-            @if (!string.IsNullOrEmpty(TempData["StatusMessage"]?.ToString()))
-            {
-                <span class="status-message">@TempData["StatusMessage"]</span>
-            }
-            else
-            {
-                <span class="status-message">  * Yes, I agree to the privacy policy. </span>
-            }
+
+           
+     
         </form>
         
 

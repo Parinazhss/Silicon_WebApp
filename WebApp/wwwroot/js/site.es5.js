@@ -17,7 +17,7 @@ function handleProfileImageUpload() {
                 }
             });
         } else {
-                console.log("File uploader not found.");
+                /*console.log("File uploader not found.");*/
             }
     } catch (error) {
         console.error("Error in handleProfileImageUpload:", error);
