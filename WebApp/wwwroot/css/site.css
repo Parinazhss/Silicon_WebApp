@@ -457,7 +457,7 @@ a:hover {
 textarea,
 select,
 input:not([type=checkbox]) {
-  min-width: 300px;
+  min-width: 400px;
   font-size: 16px;
   font-family: "manrope";
   font-weight: 400 !important;
@@ -874,10 +874,43 @@ header .container .account-buttons .profile .profile-image form label {
 }
 
 #signin {
+  margin-top: 30px;
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+}
+#signin .container {
+  width: 50%;
+}
+#signin .container form .form-content {
+  margin-top: 30px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  grid-template-areas: "email" "password" "remember" "btns";
+}
+#signin .container form .input-group label {
+  padding: 3px;
+}
+#signin .container form .checkbox-group {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+#signin .container form #form-email {
+  grid-area: email;
+}
+#signin .container form #form-email input {
+  min-width: 700px;
+}
+#signin .container form #form-password {
+  grid-area: password;
+}
+#signin .container form #form-checkbox {
+  grid-area: remember;
+}
+#signin .container form #form-button {
+  grid-area: btns;
 }
 
 #tools {
