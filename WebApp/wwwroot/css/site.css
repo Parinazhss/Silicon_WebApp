@@ -913,6 +913,48 @@ header .container .account-buttons .profile .profile-image form label {
   grid-area: btns;
 }
 
+#signup {
+  margin-left: 25%;
+}
+#signup .container {
+  width: 95%;
+}
+#signup .container form .form-content {
+  margin-top: 30px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "firstname lastname" "email email" "password comfirm" "terms terms" "submit submit";
+}
+#signup .container form input-group label {
+  padding: 3px;
+}
+#signup .container form .checkboxgroup {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+#signup .container form #form-firstname {
+  grid-area: firstname;
+}
+#signup .container form #form-lastname {
+  grid-area: lastname;
+}
+#signup .container form #form-email {
+  grid-area: email;
+}
+#signup .container form #form-password {
+  grid-area: password;
+}
+#signup .container form #form-comfirm {
+  grid-area: comfirm;
+}
+#signup .container form #form-checkbox {
+  grid-area: terms;
+}
+#signup .container form #form-button {
+  grid-area: submit;
+}
+
 #tools {
   padding: 4rem 0;
 }

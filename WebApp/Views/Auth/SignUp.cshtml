@@ -4,7 +4,10 @@
 }
 <section id="signup">
     <div class="container">
-
+        <div class="title">
+            <h1>Creat Account</h1>
+            <p>Already have an account? <a asp-asp-controller="Auth" asp-action="SignIn">Sign in here</a>.</p>
+        </div>
         @if (!string.IsNullOrEmpty(ViewData["StatusMessage"]?.ToString()))
         {
             <div class="alert alert-danger">
@@ -15,8 +18,7 @@
 
 
         <form method="post" asp-controller="Auth" asp-action="SignUp" novalidate>
-            <h1>Creat Account</h1>
-            <p>Alreadynhave an account? <a asp-asp-controller="Auth" asp-action="SignIn">Sign in here</a>.</p>
+            
 
             <div class="form-content">
 
@@ -61,7 +63,7 @@
                 </div>
 
                 <div class="form-button">
-                    <button class="btn-theme-s" type="submit">Sign up</button>
+                    <button class=" btn btn-theme" type="submit">Sign up</button>
                 </div>
       
             </div>
