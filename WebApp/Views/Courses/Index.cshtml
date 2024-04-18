@@ -3,17 +3,19 @@
     ViewData["Title"] = "Courses";
 }
 <section class="courses">
-    <div class="Container">
-        <h1>Courses</h1>
-        <form id="form-filters">
-            <select>
-                <option>All categories</option>
-            </select>
-            <div class="input-search-group">
-                <input id="searchQuery" name="serachQuery" placeholder="Search course" />
-                <i class="fa-regular fa-search"></i>
-            </div>
-        </form>
+    <div class="container">
+       <div class="header">
+            <h1>Courses</h1>
+            <form id="form-filters">
+                <select>
+                    <option>All categories</option>
+                </select>
+                <div class="input-search-group">
+                    <input id="searchQuery" name="serachQuery" placeholder="Search course" />
+                    <i class="fa-regular fa-search"></i>
+                </div>
+            </form>
+       </div>
 
         <div class="course-items">
             @if (Model.Courses != null)
@@ -38,7 +40,7 @@
                                 {
                                     <div class="discount">@course.DiscountPrice</div>
                                 }
-                                <div class="price @(!string.IsNullOrEmpty(course.DiscountPrice)? "discount-enable" : "")">@course.Price</div>
+                                <div class="price @(!string.IsNullOrEmpty(course.DiscountPrice)? "discount-enabled" : "")">@course.Price</div>
                             </div>
                             <div class="footer">
                                 <div class="hours">
