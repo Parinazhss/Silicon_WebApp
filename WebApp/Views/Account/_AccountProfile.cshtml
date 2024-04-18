@@ -5,13 +5,15 @@
  @if (user != null)
  {
      <section class="account-profile">
-         <div class="profile">
+         <div class="container">
+            <aside>
              <div class="profile-image">
-                <img src="~/images/uploads/profiles/@user.ProfileImage" alt="@user.FirstName @user.LastName" />
+                 
+                <img class="btn btn-circle" src="~/images/uploads/profiles/@user.ProfileImage" alt="@user.FirstName @user.LastName" />
 
                 <form enctype="multipart/form-data" method="post" asp-action="UploadProfileImage" asp-controller="Account">
                      <input id="fileUploader" type="file" name="file" hidden />
-                    <label for="fileUploader" class="btn btn-circle-sm"><i class="fa-solid fa-arrows-rotate"></i></label>
+                    <label for="fileUploader" class="btn btn-circle"><i class="fa-regular fa-arrows-rotate"></i></label>
 
                  </form>
              </div>
@@ -20,6 +22,12 @@
                 <p> @user.Email</p>
 
              </div>
+
+            <nav class="btn-bottuns">
+                <a class="btn btn-theme" asp-controller="Account" asp-action="Details">Accout Details</a>
+                <a class="btn btn-gray" asp-controller="Auth" asp-action="SignOut">Sign out</a>
+            </nav>
+            </aside>
          </div>
      </section>
 

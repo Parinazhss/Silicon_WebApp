@@ -4,12 +4,21 @@
     ViewData["Title"] = "Account Details";
 }
 <section class="account-details">
+ 
     <div class="container">
-        <aside>
+
+        <div class="profile">
+
             <partial name="~/Views/Account/_AccountProfile.cshtml" />
-        </aside>
+
+        </div>
 
        <div class="content" >
+
+            <div class="title">
+                <h2>Account Details</h2>
+                <h5>Basic Info</h5>
+            </div>
             @if (!string.IsNullOrEmpty(TempData["StatusMessage"]?.ToString()))
             {
                 <div class="alert alert-danger">
@@ -18,8 +27,7 @@
             }
 
             <form class="form-basic" method="post" asp-controller="Account" asp-action="UpdateBasicInfo">
-                <h2>Account Details</h2>
-                <h5>Basic Info</h5>
+                
 
                 <div class="form-content">
                     <div id="form-firstname" class="input-group">
@@ -47,22 +55,25 @@
                     </div>
 
                     <div id="form-bio" class="input-group">
-                        <label asp-for=Basic!.Bio> <span>(optional)</span></label>
+                        <label asp-for=Basic!.Bio>Bio <span>(optional)</span></label>
                         <textarea asp-for="Basic!.Bio"></textarea>
                     </div>
 
                     <div id="form-buttons">
-                        <button class="btn-gray" type="reset">Cancel</button>
-                        <button class="btn-theme" type="submit">Save changes</button>
+                        <button class="btn btn-gray" type="reset">Cancel</button>
+                        <button class="btn btn-theme" type="submit">Save changes</button>
                     </div>
 
 
                 </div>
             </form>
-
+            <div class="title">
+                <h5>Address</h5>
+            </div>
             <form class="form-address" method="post" asp-controller="Account" asp-action="UpdateAddressInfo">
 
-                <h5>Address</h5>
+                
+               
 
                 <div class="form-content">
                     <div id="form-addressline_1" class="input-group">
@@ -89,9 +100,9 @@
                         <input asp-for="Address!.City" />
                     </div>
 
-                    <div class="form-buttons">
-                        <button class="btn-gray" type="reset">Cancel</button>
-                        <button class="btn-theme" type="submit">Save changes</button>
+                    <div class="form-buttons-address">
+                        <button class="btn btn-gray" type="reset">Cancel</button>
+                        <button class="btn btn-theme" type="submit">Save changes</button>
                     </div>
 
                 </div>

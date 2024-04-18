@@ -1,0 +1,103 @@
+.account-details {
+
+
+    .container {
+        display: flex;
+
+
+        .content {
+            .title{
+                h5{
+                    color: var(--color-theme);
+                    margin-top: 3rem;
+                }
+            }
+
+            .form-basic {
+
+
+                .form-content {
+                    display: grid;
+                    gap: 20px;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-areas: "firstname lastname" "email phone" "bio bio" "submit submit";
+                }
+            }
+
+            #form-firstname {
+                grid-area: firstname;
+            }
+
+            #form-lastname {
+                grid-area: lastname;
+            }
+
+            #form-email {
+                grid-area: email;
+            }
+
+            #form-phone {
+                grid-area: phone;
+            }
+
+            #form-bio {
+                grid-area: bio;
+            }
+
+            #form-buttons {
+                grid-area: submit;
+                width: 40%;
+                display: flex;
+            }
+
+            .form-address {
+                margin-top: 30px;
+                margin-right: 15px;
+
+                #form-buttons-address {
+                    grid-area: submit;
+                    width: 40%;
+                    display: flex;
+                }
+
+                .form-content {
+                    display: grid;
+                    gap: 20px;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-areas: "Address1 Address1" "Address2 Address2" "postal city" "submit submit";
+                }
+            }
+
+            #form-addressline_1 {
+                grid-area: Address1;
+            }
+
+            #form-addressline_2 {
+                grid-area: Address2;
+            }
+
+            #form-postalcode {
+                grid-area: postal;
+            }
+
+            #form-city {
+                grid-area: city;
+            }
+
+            #form-buttons-address {
+                grid-area: submit;
+                width: 40%;
+                display: flex;
+            }
+        }
+    }
+
+    .profile {
+        width: 400px;
+        margin-right: 40px;
+    }
+
+    .form-container {
+        flex: 1;
+    }
+}
